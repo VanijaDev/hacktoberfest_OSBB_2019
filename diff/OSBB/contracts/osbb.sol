@@ -35,6 +35,10 @@ contract OSBB is Ownable {
             
             usersArray.push(User({Name : name, Flat : flat, Floor : floor, addr : addr}));
     }
+    
+    function addIssue (string memory Description, bool DoneApprovedByUser, uint CreationDate, uint DueDate, uint8 CriticalLevel) public {
+        issues.push(Issue({Description : Description, Status : StatusOfIssue.newIssue, DoneApprovedByUser : DoneApprovedByUser, CreationDate : now, DueDate : DueDate, CriticalLevel : CriticalLevel}));
+    }
 
     
     struct Issue {
