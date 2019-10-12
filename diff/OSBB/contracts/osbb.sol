@@ -6,8 +6,8 @@ contract OSBB is Ownable {
     // Resident of OSBB
     struct User {
         bytes32 Name;
-        uint Flat;
-        uint Floor;
+        uint8 Flat;
+        uint8 Floor;
         address addr;
     }
     
@@ -27,8 +27,8 @@ contract OSBB is Ownable {
     }
     
     function addUser (bytes32 name,
-        uint flat,
-        uint floor,
+        uint8 flat,
+        uint8 floor,
         address addr) public onlyOwner  {
             require(name.length > 0, "Incorrect Name");
             require(addr != address(0), "Wrong Address");
@@ -52,12 +52,3 @@ contract OSBB is Ownable {
         // TODO: add resident Limit
     }
 }
-
-/**
-Создание Юзера ОСББ.
-	Имя, квартира, этаж.
-Создание Issue.
-	Description, Status, Approved by user, Creation Date, Due date, Critical level(Int)
-Обновление статуса Issue Админом(new, in progress, Done).
-Обновление статуса Approved(User)(Bool).
- */
