@@ -44,7 +44,7 @@ contract OSBB is Ownable {
         bool DoneApprovedByUser; // User approves Issue after done
         uint CreationDate; // Creation date of issue
         uint DueDate; // Date when the issue supposed to be done(User updates it)
-        uint CriticalLevel; // How critical is the issue(user updates it on creation)
+        uint8 CriticalLevel; // How critical is the issue(user updates it on creation)
     }
 
 
